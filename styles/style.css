@@ -20,7 +20,7 @@ body {
 
 /* HEADER */
 .header {
-    background-color: #004080;
+    background-color: #036; /* #004080 → #036 short hex */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -45,7 +45,7 @@ body {
 }
 
 .header nav a.active {
-    border-bottom: 2px solid #ffcc00;
+    border-bottom: 2px solid #fc0; /* #ffcc00 → #fc0 short hex */
 }
 
 /* HERO SECTION */
@@ -66,7 +66,7 @@ body {
 }
 
 .btn-primary {
-    background-color: #004080;
+    background-color: #036; /* #004080 → #036 short hex */
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -76,7 +76,7 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #003366;
+    background-color: #036; /* #003366 → #036 short hex */
 }
 
 .hero img {
@@ -87,31 +87,36 @@ body {
 
 /* STATS SECTION */
 .stats {
-    display: flex;
-    justify-content: space-between;
+    display: grid; /* prefer grid for uniformity */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     margin: 50px 0;
 }
 
 .stats .card {
     background-color: #fff;
     padding: 20px;
-    flex: 1;
-    margin: 0 10px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 10%); /* modern alpha notation */
 }
 
 .stats h3 {
     font-size: 2rem;
-    color: #004080;
+    color: #036; /* #004080 → #036 */
+}
+
+/* GENERIC GRID (move above featured for no-descending-specificity) */
+.grid {
+    display: grid;
+    gap: 20px;
 }
 
 /* FEATURED ANNOUNCEMENTS */
 .featured h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #004080;
+    color: #036; /* #004080 → #036 */
 }
 
 .featured .grid {
@@ -124,7 +129,7 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 10%); /* modern alpha */
 }
 
 .featured img {
@@ -134,8 +139,8 @@ body {
 }
 
 .btn-secondary {
-    background-color: #ffcc00;
-    color: #004080;
+    background-color: #fc0; /* #ffcc00 → #fc0 */
+    color: #036; /* #004080 → #036 */
     padding: 8px 15px;
     border: none;
     cursor: pointer;
@@ -148,19 +153,14 @@ body {
 
 /* FOOTER */
 .footer {
-    background-color: #004080;
+    background-color: #036; /* #004080 → #036 */
     color: #fff;
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
 }
 
-/* GRID & BUTTONS GENERIC */
+/* BUTTONS GENERIC */
 button {
     transition: 0.3s;
-}
-
-.grid {
-    display: grid;
-    gap: 20px;
 }
