@@ -1,0 +1,15 @@
+{
+  "name": "uni-notice-board",
+  "version": "1.0.0",
+  "scripts": {
+    "lint:html": "htmlhint \"src/**/*.html\"",
+    "lint:css": "stylelint \"styles/**/*.css\"",
+    "build": "parcel build src/index.html --dist-dir dist --public-url ./"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "parcel": "^2.12.0"
+  }
+}
