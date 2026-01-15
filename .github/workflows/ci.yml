@@ -1,67 +1,77 @@
 name: CI Pipeline
 
 on:
-  pull_request:
-    branches: [develop]
   push:
-    branches: [main]
+    branches:
+      - develop
+      - feature/**
 
 jobs:
-  lint:
+  lint_html:
+    name: HTMLHint Lint
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run HTMLHint
         run: npm run lint:html
 
+  lint_css:
+    name: Stylelint Lint
+    runs-on: ubuntu-latest
+    needs: lint_html
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run Stylelint
         run: npm run lint:css
 
-  build:
+  build_and_docker:
+    name: Build + Docker Build & Push
     runs-on: ubuntu-latest
-    needs: lint
-
+    needs: lint_css
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build website with Parcel
         run: npm run build
 
-  docker:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/uni-notice-board:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/uni-notice-board:latest
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: Ahsan108art/ucp_notice_board.git:latest
