@@ -3,9 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>University Notices</title>
+  <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-  
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container">
+    <h1>University Digital Notice Board</h1>
+    <p>All official notices and announcements in one place</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notices.html" class="active">Notices</a></li>
+        <li><a href="exams.html">Exams</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container">
+    <h2>Latest University Notices</h2>
+    <p>Find all important announcements, deadlines, and updates here.</p>
+  </div>
+</section>
+
+<!-- ================= FILTER BAR ================= -->
+<section class="filter-bar">
+  <div class="container">
+    <input type="text" placeholder="Search notices..." id="search">
+    <select>
+      <option>All Categories</option>
+      <option>Admissions</option>
+      <option>Exams</option>
+      <option>Events</option>
+      <option>Administration</option>
+    </select>
+    <button class="btn-primary">Filter</button>
+  </div>
+</section>
+
+<!-- ================= NOTICES CARDS ================= -->
+<section class="featured container">
+  <h2>Recent Notices</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Notice">
+      <h3>Semester Registration Deadline</h3>
+      <p>Students must complete semester registration by 10 March 2026.</p>
+      <button class="btn-secondary">Read More</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Notice">
+      <h3>Scholarship Announcements</h3>
+      <p>Check eligibility and apply for merit-based scholarships.</p>
+      <button class="btn-secondary">Apply Now</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Notice">
+      <h3>Science Fair 2026</h3>
+      <p>Participate in the annual science fair and showcase projects.</p>
+      <button class="btn-secondary">Register</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Notice">
+      <h3>Exam Fee Submission</h3>
+      <p>Submit your exam fees by 5 March 2026 to avoid penalties.</p>
+      <button class="btn-secondary">Pay Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TABLE VIEW ================= -->
+<section class="table-section">
+  <div class="container">
+    <h2>All Notices Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Date Published</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Semester Registration Deadline</td>
+          <td>Academics</td>
+          <td>01 Mar 2026</td>
+          <td><button class="btn-secondary">View</button></td>
+        </tr>
+        <tr>
+          <td>Scholarship Announcements</td>
+          <td>Financial Aid</td>
+          <td>02 Mar 2026</td>
+          <td><button class="btn-secondary">View</button></td>
+        </tr>
+        <tr>
+          <td>Science Fair 2026</td>
+          <td>Events</td>
+          <td>03 Mar 2026</td>
+          <td><button class="btn-secondary">Register</button></td>
+        </tr>
+        <tr>
+          <td>Exam Fee Submission</td>
+          <td>Exams</td>
+          <td>01 Mar 2026</td>
+          <td><button class="btn-secondary">Pay Now</button></td>
+        </tr>
+        <tr>
+          <td>University Holiday</td>
+          <td>Administration</td>
+          <td>28 Feb 2026</td>
+          <td><button class="btn-secondary">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer container">
+  <p>&copy; 2026 University Digital Notice Board | All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
