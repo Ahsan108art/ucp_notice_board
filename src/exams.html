@@ -3,9 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>University Exam Schedules</title>
+  <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-  
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container">
+    <h1>University Digital Notice Board</h1>
+    <p>All official exam schedules and related announcements</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notices.html">Notices</a></li>
+        <li><a href="exams.html" class="active">Exams</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container">
+    <h2>Upcoming Exam Schedules</h2>
+    <p>Keep track of your exams and submission deadlines.</p>
+  </div>
+</section>
+
+<!-- ================= FILTER & SEARCH ================= -->
+<section class="filter-bar">
+  <div class="container">
+    <input type="text" placeholder="Search by course or department..." id="search">
+    <select>
+      <option>All Departments</option>
+      <option>Computer Science</option>
+      <option>Electrical Engineering</option>
+      <option>Mechanical</option>
+      <option>Business</option>
+    </select>
+    <button class="btn-primary">Filter</button>
+  </div>
+</section>
+
+<!-- ================= EXAM SCHEDULE TABLE ================= -->
+<section class="table-section">
+  <div class="container">
+    <h2>Exam Schedule Overview</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Department</th>
+          <th>Exam Date</th>
+          <th>Time</th>
+          <th>Venue</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data Structures</td>
+          <td>Computer Science</td>
+          <td>10 Mar 2026</td>
+          <td>09:00 - 12:00</td>
+          <td>Room 101</td>
+          <td><button class="btn-secondary">Download Admit</button></td>
+        </tr>
+        <tr>
+          <td>Algorithms</td>
+          <td>Computer Science</td>
+          <td>12 Mar 2026</td>
+          <td>09:00 - 12:00</td>
+          <td>Room 102</td>
+          <td><button class="btn-secondary">Download Admit</button></td>
+        </tr>
+        <tr>
+          <td>Thermodynamics</td>
+          <td>Mechanical</td>
+          <td>11 Mar 2026</td>
+          <td>14:00 - 17:00</td>
+          <td>Lab A</td>
+          <td><button class="btn-secondary">Download Admit</button></td>
+        </tr>
+        <tr>
+          <td>Circuit Analysis</td>
+          <td>Electrical Engineering</td>
+          <td>13 Mar 2026</td>
+          <td>09:00 - 12:00</td>
+          <td>Room 203</td>
+          <td><button class="btn-secondary">Download Admit</button></td>
+        </tr>
+        <tr>
+          <td>Business Ethics</td>
+          <td>Business</td>
+          <td>15 Mar 2026</td>
+          <td>10:00 - 12:00</td>
+          <td>Room 305</td>
+          <td><button class="btn-secondary">Download Admit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= CARD HIGHLIGHTS ================= -->
+<section class="featured container">
+  <h2>Important Exam Announcements</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Exam Notice">
+      <h3>Exam Form Submission</h3>
+      <p>Submit exam forms before 5 March 2026 to avoid late fees.</p>
+      <button class="btn-secondary">Submit Now</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Exam Notice">
+      <h3>Exam Hall Rules</h3>
+      <p>Ensure all students follow the university examination hall rules.</p>
+      <button class="btn-secondary">View Rules</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Exam Notice">
+      <h3>Result Announcement</h3>
+      <p>Results for previous semester exams will be published on 20 March 2026.</p>
+      <button class="btn-secondary">Check Results</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Exam Notice">
+      <h3>Re-evaluation Request</h3>
+      <p>Apply for re-evaluation within 7 days of result publication.</p>
+      <button class="btn-secondary">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+<section class="form-section container">
+  <h2>Exam Queries</h2>
+  <form>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" placeholder="Your full name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Your email">
+
+    <label for="department">Department:</label>
+    <select id="department">
+      <option>Computer Science</option>
+      <option>Electrical Engineering</option>
+      <option>Mechanical</option>
+      <option>Business</option>
+    </select>
+
+    <label for="query">Query:</label>
+    <textarea id="query" rows="5" placeholder="Write your query about exams"></textarea>
+
+    <button type="submit" class="btn-primary">Submit Query</button>
+  </form>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer container">
+  <p>&copy; 2026 University Digital Notice Board | All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
