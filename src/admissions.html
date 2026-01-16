@@ -3,9 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>University Admissions</title>
+  <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-  
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container">
+    <h1>University Digital Notice Board</h1>
+    <p>All admissions information and application updates</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notices.html">Notices</a></li>
+        <li><a href="exams.html">Exams</a></li>
+        <li><a href="admissions.html" class="active">Admissions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container">
+    <h2>Apply to Your Desired Program</h2>
+    <p>Start your journey with us. Check admission guidelines, timelines, and announcements.</p>
+    <button class="btn-primary">Start Application</button>
+    <img src="https://via.placeholder.com/800x300" alt="University admission placeholder">
+  </div>
+</section>
+
+<!-- ================= ADMISSION STEPS ================= -->
+<section class="featured container">
+  <h2>Admission Process</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Step 1">
+      <h3>Step 1: Submit Application</h3>
+      <p>Complete your application form online and provide required documents.</p>
+      <button class="btn-secondary">Apply Now</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Step 2">
+      <h3>Step 2: Entrance Exam</h3>
+      <p>Appear for the entrance exam on the scheduled date for your program.</p>
+      <button class="btn-secondary">View Exam Dates</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Step 3">
+      <h3>Step 3: Interview</h3>
+      <p>Shortlisted candidates will be called for an interview with the department.</p>
+      <button class="btn-secondary">Schedule Interview</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Step 4">
+      <h3>Step 4: Admission Confirmation</h3>
+      <p>Receive admission confirmation after meeting eligibility and submitting fees.</p>
+      <button class="btn-secondary">Confirm Admission</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPLICATION FORM ================= -->
+<section class="form-section container">
+  <h2>Admission Application Form</h2>
+  <form>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" placeholder="Enter your full name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <label for="program">Select Program:</label>
+    <select id="program">
+      <option>Bachelor of Computer Science</option>
+      <option>Bachelor of Electrical Engineering</option>
+      <option>Bachelor of Mechanical Engineering</option>
+      <option>Bachelor of Business Administration</option>
+    </select>
+
+    <label for="documents">Upload Documents:</label>
+    <input type="file" id="documents">
+
+    <label for="statement">Personal Statement:</label>
+    <textarea id="statement" rows="5" placeholder="Write a short statement about yourself"></textarea>
+
+    <button type="submit" class="btn-primary">Submit Application</button>
+  </form>
+</section>
+
+<!-- ================= ANNOUNCEMENTS ================= -->
+<section class="featured container">
+  <h2>Admission Announcements</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Announcement">
+      <h3>Application Deadline</h3>
+      <p>Last date for submitting applications is 15 March 2026.</p>
+      <button class="btn-secondary">Apply Now</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Announcement">
+      <h3>Scholarship Opportunities</h3>
+      <p>Merit-based scholarships available for top-performing students.</p>
+      <button class="btn-secondary">Check Eligibility</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Announcement">
+      <h3>Orientation Schedule</h3>
+      <p>Orientation for new students will be held on 1 April 2026.</p>
+      <button class="btn-secondary">View Details</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Announcement">
+      <h3>Important Guidelines</h3>
+      <p>Read all admission guidelines carefully before applying.</p>
+      <button class="btn-secondary">Read Guidelines</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer container">
+  <p>&copy; 2026 University Digital Notice Board | All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
