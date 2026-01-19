@@ -1,68 +1,24 @@
-name: CI Pipeline
+name: CD Pipeline
 
 on:
-  push:
-    branches:
-      - develop
-      - feature/**
-  pull_request:
-    branches:
-      - main
-      - develop
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    branches: [develop]
+    types:
+      - completed
 
 jobs:
-  lint_html:
-    name: HTMLHint Lint
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Deploy to Render
+        run: |
+          if [ -z "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
+            echo "::error::Secret RENDER_DEPLOY_HOOK is empty or missing!"
+            exit 1
+          fi
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run HTMLHint
-        run: npm run lint:html
-
-  lint_css:
-    name: Stylelint Lint
-    runs-on: ubuntu-latest
-    needs: lint_html
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run Stylelint
-        run: npm run lint:css
-
-  build_and_docker:
-    name: Build + Docker Build & Push
-    runs-on: ubuntu-latest
-    needs: lint_css
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build website with Parcel
-        run: npm run build
+          echo "Triggering Render deploy..."
+          curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
